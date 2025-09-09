@@ -1,0 +1,85 @@
+[
+  {
+  "id": 1,
+  "nombre": "Text",
+  "descripcion": "Muestra texto en pantalla.",
+  "codigo": "<Text>Hola mundo</Text>",
+  "ejemplo": "Útil para mostrar mensajes, etiquetas, títulos, etc.",
+  "notas": "Es uno de los componentes más básicos. Debe ir siempre dentro de una View.",
+  "renderDemo": "JSX"
+},
+  {
+    "id": 2,
+    "nombre": "View",
+    "descripcion": "Contenedor genérico para agrupar otros componentes.",
+    "codigo": "<View><Text>Contenido</Text></View>",
+    "ejemplo": "Agrupa visualmente elementos y permite aplicar estilos.",
+    "notas": "Funciona como un <div> en HTML. Permite usar Flexbox y estilos."
+  },
+  {
+    "id": 3,
+    "nombre": "Button",
+    "descripcion": "Botón simple que ejecuta una acción cuando se presiona.",
+    "codigo": "<Button title=\"Presioname\" onPress={() => alert('Hola!')} />",
+    "ejemplo": "Ideal para acciones rápidas como enviar formularios o abrir una alerta.",
+    "notas": "Es limitado en personalización. Para más estilo, usar TouchableOpacity."
+  },
+  {
+    "id": 4,
+    "nombre": "TextInput",
+    "descripcion": "Campo de entrada de texto editable.",
+    "codigo": "<TextInput value={texto} onChangeText={setTexto} placeholder=\"Escribí algo\" />",
+    "ejemplo": "Se usa en formularios para ingresar texto.",
+    "notas": "Necesita un estado (useState) para manejar el texto ingresado."
+  },
+  {
+    "id": 5,
+    "nombre": "ScrollView",
+    "descripcion": "Permite hacer scroll vertical u horizontal de su contenido.",
+    "codigo": "<ScrollView><Text>Contenido largo...</Text></ScrollView>",
+    "ejemplo": "Útil para pantallas con mucho contenido como listas o formularios largos.",
+    "notas": "Asegurarse de usar 'contentContainerStyle' para estilos internos."
+  },
+  {
+    "id": 6,
+    "nombre": "FlatList",
+    "descripcion": "Renderiza listas grandes de forma eficiente.",
+    "codigo": "<FlatList data={datos} renderItem={({ item }) => <Text>{item}</Text>} />",
+    "ejemplo": "Ideal para mostrar productos, mensajes, usuarios, etc.",
+    "notas": "Requiere una 'keyExtractor' o que cada ítem tenga una key única."
+  },
+  {
+    "id": 7,
+    "nombre": "TouchableOpacity",
+    "descripcion": "Componente presionable con animación de opacidad.",
+    "codigo": "<TouchableOpacity onPress={() => alert('Presionado')}><Text>Toque</Text></TouchableOpacity>",
+    "ejemplo": "Usado para botones personalizados, íconos, tarjetas, etc.",
+    "notas": "Permite aplicar cualquier estilo, ideal para personalizar botones."
+  },
+  {
+    "id": 8,
+    "nombre": "Image",
+    "descripcion": "Muestra imágenes desde internet o recursos locales.",
+    "codigo": "<Image source={{ uri: 'https://ejemplo.com/imagen.png' }} style={{ width: 100, height: 100 }} />",
+    "ejemplo": "Perfecto para mostrar avatares, banners, íconos, etc.",
+    "notas": "Se debe definir tamaño (width y height) en el estilo."
+  },
+  {
+    "id": 9,
+    "nombre": "SafeAreaView",
+    "descripcion": "Evita que el contenido se solape con elementos del sistema como la barra de estado.",
+    "codigo": "<SafeAreaView><Text>Contenido</Text></SafeAreaView>",
+    "ejemplo": "Se usa como contenedor principal de una pantalla.",
+    "notas": "Solo disponible en dispositivos iOS y ciertos Android con notch o barras."
+  },
+  {
+  "id": 10,
+  "nombre": "Modal",
+  "descripcion": "Muestra contenido flotante sobre la pantalla actual, ideal para alertas, formularios o confirmaciones.",
+  "codigo": "const [visible, setVisible] = useState(false);\n\n<View style={{ marginTop: 20 }}>\n  <Button title=\"Mostrar Modal\" onPress={() => setVisible(true)} />\n  <Modal\n    visible={visible}\n    transparent={true}\n    animationType=\"slide\"\n    onRequestClose={() => setVisible(false)}\n  >\n    <View style={{ flex:1, justifyContent:'center', alignItems:'center', backgroundColor:'rgba(0,0,0,0.5)' }}>\n      <View style={{ backgroundColor: 'white', padding: 20, borderRadius: 10 }}>\n        <Text>Este es un Modal</Text>\n        <Button title=\"Cerrar\" onPress={() => setVisible(false)} />\n      </View>\n    </View>\n  </Modal>\n</View>",
+  "ejemplo": "Ideal para mostrar opciones, advertencias o formularios que requieren atención del usuario.",
+  "notas": "Recordá usar 'transparent' y 'animationType' para mejorar la experiencia. Siempre agregar 'onRequestClose' en Android."
+}
+
+]
+

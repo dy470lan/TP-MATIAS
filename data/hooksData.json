@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "nombre": "useState",
+    "descripcion": "Permite agregar estado a un componente funcional.",
+    "codigo": "const [contador, setContador] = useState(0);",
+    "ejemplo": "setContador(contador + 1);",
+    "notas": "Ideal para manejar formularios, contadores y cambios simples de estado."
+  },
+  {
+    "id": 2,
+    "nombre": "useEffect",
+    "descripcion": "Permite ejecutar efectos secundarios como llamadas a APIs o manejo del ciclo de vida.",
+    "codigo": "useEffect(() => {\n  console.log('Componente montado');\n}, []);",
+    "ejemplo": "useEffect(() => {\n  fetchDatos();\n}, [userId]);",
+    "notas": "Los efectos se pueden controlar con dependencias en el segundo parámetro."
+  },
+  {
+    "id": 3,
+    "nombre": "useContext",
+    "descripcion": "Permite acceder a valores globales compartidos en la app sin pasar props manualmente.",
+    "codigo": "const valor = useContext(MiContexto);",
+    "ejemplo": "const tema = useContext(TemaContext);",
+    "notas": "Usado para temas, usuarios, autenticación, etc."
+  }
+]

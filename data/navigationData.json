@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "nombre": "¿Qué es React Navigation?",
+    "descripcion": "Es una biblioteca popular para manejar la navegación entre pantallas en aplicaciones móviles construidas con React Native. Permite una experiencia fluida y flexible.",
+    "codigo": "npm install @react-navigation/native"
+  },
+  {
+    "id": 2,
+    "nombre": "Stack Navigation",
+    "descripcion": "Simula una pila de pantallas, donde cada nueva pantalla se apila sobre la anterior. Ideal para flujos de navegación como 'login → home → detalles'.",
+    "codigo": "const Stack = createNativeStackNavigator();\n<Stack.Navigator>\n  <Stack.Screen name=\"Home\" component={HomeScreen} />\n</Stack.Navigator>"
+  },
+  {
+    "id": 3,
+    "nombre": "Tab Navigation",
+    "descripcion": "Muestra una barra inferior de pestañas para navegar entre secciones principales. Muy usado en apps como Instagram o Twitter.",
+    "codigo": "const Tab = createBottomTabNavigator();\n<Tab.Navigator>\n  <Tab.Screen name=\"Inicio\" component={InicioScreen} />\n</Tab.Navigator>"
+  },
+  {
+    "id": 4,
+    "nombre": "Drawer Navigation",
+    "descripcion": "Permite abrir un menú lateral deslizable para acceder a distintas secciones. Muy útil para configuraciones o accesos rápidos.",
+    "codigo": "const Drawer = createDrawerNavigator();\n<Drawer.Navigator>\n  <Drawer.Screen name=\"Perfil\" component={PerfilScreen} />\n</Drawer.Navigator>"
+  },
+  {
+    "id": 5,
+    "nombre": "Navegación con parámetros",
+    "descripcion": "Podés enviar información entre pantallas mediante parámetros, como un ID o un nombre.",
+    "codigo": "navigation.navigate('Detalles', { id: 42 })"
+  },
+  {
+    "id": 6,
+    "nombre": "Volver a la pantalla anterior",
+    "descripcion": "Es posible regresar en la pila de navegación usando un solo método.",
+    "codigo": "navigation.goBack()"
+  }
+]
