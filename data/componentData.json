@@ -79,7 +79,16 @@
   "codigo": "const [visible, setVisible] = useState(false);\n\n<View style={{ marginTop: 20 }}>\n  <Button title=\"Mostrar Modal\" onPress={() => setVisible(true)} />\n  <Modal\n    visible={visible}\n    transparent={true}\n    animationType=\"slide\"\n    onRequestClose={() => setVisible(false)}\n  >\n    <View style={{ flex:1, justifyContent:'center', alignItems:'center', backgroundColor:'rgba(0,0,0,0.5)' }}>\n      <View style={{ backgroundColor: 'white', padding: 20, borderRadius: 10 }}>\n        <Text>Este es un Modal</Text>\n        <Button title=\"Cerrar\" onPress={() => setVisible(false)} />\n      </View>\n    </View>\n  </Modal>\n</View>",
   "ejemplo": "Ideal para mostrar opciones, advertencias o formularios que requieren atención del usuario.",
   "notas": "Recordá usar 'transparent' y 'animationType' para mejorar la experiencia. Siempre agregar 'onRequestClose' en Android."
+},
+{
+  "id": 11,
+  "nombre": "Async/Await",
+  "descripcion": "Maneja operaciones asincrónicas, como llamadas a APIs o tareas demoradas.",
+  "codigo": "const obtenerDatos = async () => {\n  try {\n    const resultado = await new Promise(resolve => setTimeout(() => resolve('Datos listos'), 2000));\n    console.log(resultado);\n  } catch (error) {\n    console.error(error);\n  }\n};",
+  "ejemplo": "Ideal para cargar datos de una API sin bloquear la interfaz.",
+  "notas": "La palabra clave 'await' solo puede usarse dentro de funciones 'async'. Reemplaza el uso tradicional de .then() y .catch()."
 }
+
 
 ]
 

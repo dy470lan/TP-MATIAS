@@ -1,26 +1,32 @@
-import React, { useEffect, useState } from 'react';
-import { ContadorProvider, useContador } from '../context/ContadorContext';
-import { Button } from 'react-native';
-import { View, ScrollView, Text, ActivityIndicator, StyleSheet } from 'react-native';
-import ExplicacionBlock from '../components/ExplicacionBlock';
-import data from '../data/contextData.json';
+import React, { useEffect, useState } from "react";
+import { ContadorProvider, useContador } from "../context/ContadorContext";
+import { Button } from "react-native";
+import {
+  View,
+  ScrollView,
+  Text,
+  ActivityIndicator,
+  StyleSheet,
+} from "react-native";
+import ExplicacionBlock from "../components/ExplicacionBlock";
+import data from "../data/contextData.json";
 
 export default function ContextScreen() {
   const [contextos, setContextos] = useState([]);
 
   const MostrarContador = () => {
-  const { contador } = useContador();
-  return <Text style={styles.contador}>Contador actual: {contador}</Text>;
-};
+    const { contador } = useContador();
+    return <Text style={styles.contador}>Contador actual: {contador}</Text>;
+  };
 
-const BotonIncrementar = () => {
-  const { incrementar } = useContador();
-  return <Button title="Incrementar contador" onPress={incrementar} />;
-};
+  const BotonIncrementar = () => {
+    const { incrementar } = useContador();
+    return <Button title="Incrementar contador" onPress={incrementar} />;
+  };
 
   useEffect(() => {
     const cargarDatos = async () => {
-      await new Promise(resolve => setTimeout(resolve, 500));
+      await new Promise((resolve) => setTimeout(resolve, 500));
       setContextos(data);
     };
     cargarDatos();
@@ -30,55 +36,61 @@ const BotonIncrementar = () => {
     return (
       <View style={styles.loadingContainer}>
         <ActivityIndicator size="large" color="orange" />
-        <Text style={{ marginTop: 10 }}>Cargando información sobre Context API...</Text>
+        <Text style={{ marginTop: 10 }}>
+          Cargando información sobre Context API...
+        </Text>
       </View>
     );
   }
 
   return (
-    <ScrollView style={styles.container}>
-      <Text style={styles.titulo}>🎯 Introducción al Context API</Text>
-      <Text style={styles.descripcion}>
-        El Context API en React permite compartir información entre componentes sin tener que pasar props manualmente por cada nivel del árbol.
-      </Text>
+      <ScrollView style={styles.container }>
+        <Text style={styles.titulo}>🎯 Introducción al Context API</Text>
+        <Text style={styles.descripcion}>
+          El Context API en React permite compartir información entre
+          componentes sin tener que pasar props manualmente por cada nivel del
+          árbol.
+        </Text>
 
-      {contextos.map((item) => (
-        <ExplicacionBlock
-          key={item.id}
-          titulo={item.nombre}
-          descripcion={item.descripcion}
-          codigo={item.codigo}
-          ejemplo={item.ejemplo}
-          notas={item.notas}
-        />
-      ))}
+        {contextos.map((item) => (
+          <ExplicacionBlock
+            key={item.id}
+            titulo={item.nombre}
+            descripcion={item.descripcion}
+            codigo={item.codigo}
+            ejemplo={item.ejemplo}
+            notas={item.notas}
+          />
+        ))}
 
-      <View style={styles.ejemploContainer}>
-  <Text style={styles.titulo}>🧪 Ejemplo práctico interactivo</Text>
-  <Text style={styles.descripcion}>
-    A continuación podés ver un contador compartido entre componentes usando Context.
-  </Text>
+        <View style={styles.ejemploContainer}>
+          <Text style={styles.titulo}>🧪 Ejemplo práctico interactivo</Text>
+          <Text style={styles.descripcion}>
+            A continuación podés ver un contador compartido entre componentes
+            usando Context.
+          </Text>
 
-  <ContadorProvider>
-    <MostrarContador />
-    <BotonIncrementar />
-  </ContadorProvider>
-</View>
-
-    </ScrollView>
+          <ContadorProvider>
+            <MostrarContador />
+            <BotonIncrementar />
+          </ContadorProvider>
+        </View>
+      </ScrollView>
+   
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+   container: {
     flex: 1,
-    padding: 30,
-    paddingBottom: 30,
-    backgroundColor: '#fff',
+    padding: 5,
+    
+    paddingBottom: 60,
+    backgroundColor: "#fff",
   },
   titulo: {
     fontSize: 22,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 10,
   },
   descripcion: {
@@ -87,20 +99,19 @@ const styles = StyleSheet.create({
   },
   loadingContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     marginTop: 50,
   },
-    ejemploContainer: {
+  ejemploContainer: {
     marginTop: 30,
     paddingVertical: 20,
     borderTopWidth: 1,
-    borderTopColor: '#ddd',
+    borderTopColor: "#ddd",
   },
   contador: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginVertical: 10,
   },
-
 });

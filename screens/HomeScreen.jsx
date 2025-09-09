@@ -1,78 +1,67 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-
+import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, ScrollView } from 'react-native';
 
 export default function HomeScreen({ navigation }) {
+  const secciones = [
+    { titulo: 'Explorar Fundamentos', ruta: 'Componentes' },
+    { titulo: 'Explorar APIs', ruta: 'API' },
+    { titulo: 'Explorar Hooks', ruta: 'Hooks' },
+    { titulo: 'Explorar Navegacion', ruta: 'Navegación' },
+    { titulo: 'Explorar Estilos', ruta: 'Estilos' },
+    { titulo: 'Explorar Context API', ruta: 'Contexto' },
+  ];
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>📱 Bienvenido a PresentaRN</Text>
-
-        <TouchableOpacity
-        style={styles.boton}
-        onPress={() => navigation.navigate('Componentes')}>
-        <Text style={styles.textoBoton}>Explorar Componentes</Text>
-        </TouchableOpacity>
-     
-      <TouchableOpacity
-        style={styles.boton}
-        onPress={() => navigation.navigate('API')}>
-        <Text style={styles.textoBoton}>Explorar APIs</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity
-  style={styles.boton}
-  onPress={() => navigation.navigate('Hooks')}
->
-  <Text style={styles.textoBoton}>Explorar Hooks</Text>
-</TouchableOpacity>
-  
-   <TouchableOpacity
-  style={styles.boton}
-  onPress={() => navigation.navigate('Navegación')}
->
-  <Text style={styles.textoBoton}>Explorar Navegacion</Text>
-</TouchableOpacity>
-
-<TouchableOpacity
-  style={styles.boton}
-  onPress={() => navigation.navigate('Estilos')}
->
-  <Text style={styles.textoBoton}>Explorar Estilos</Text>
-</TouchableOpacity>
-
-<TouchableOpacity
-  style={styles.boton}
-  onPress={() => navigation.navigate('Contexto')}
->
-  <Text style={styles.textoBoton}>Explorar Context API</Text>
-</TouchableOpacity>
-
-    </View>
+    <SafeAreaView style={styles.safe}>
+      <ScrollView contentContainerStyle={styles.container}>
+        <Text style={styles.titulo}>📱 Tutorial Interactivo de React-Native</Text>
+        {secciones.map((item, index) => (
+          <TouchableOpacity
+            key={index}
+            style={styles.boton}
+            onPress={() => navigation.navigate(item.ruta)}
+          >
+            <Text style={styles.botonTexto}>{item.titulo}</Text>
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  safe: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
+    backgroundColor: '#f2f2f2',
   },
-  title: {
+  container: {
+    padding: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  titulo: {
     fontSize: 22,
     fontWeight: 'bold',
-    marginBottom: 20,
+    marginBottom: 30,
+    textAlign: 'center',
   },
   boton: {
-    backgroundColor: '#4CAF50',
-    paddingVertical: 12,
-    paddingHorizontal: 24,
-    borderRadius: 8,
-    marginTop: 20,
+    backgroundColor: '#073c79ff',
+    paddingVertical: 14,
+    paddingHorizontal: 28,
+    borderRadius: 10,
+    marginBottom: 16,
+    width: '90%',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.15,
+    shadowRadius: 3,
+    elevation: 3,
   },
-  textoBoton: {
-    color: '#fff',
+  botonTexto: {
+    color: 'white',
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: '600',
+    textAlign: 'center',
   },
 });

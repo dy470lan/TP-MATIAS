@@ -49,7 +49,7 @@ export default function NavigationScreen() {
 const styles = StyleSheet.create({
   scrollContent: {
     padding: 30,
-    paddingBottom: 60, // margen inferior para que no se corte el contenido
+    paddingBottom: 60, 
     backgroundColor: '#fff',
   },
   titulo: {
