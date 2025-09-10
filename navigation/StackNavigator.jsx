@@ -9,6 +9,7 @@ import EstilosScreen from '../screens/EstiloScreen';
 import ContextScreen from '../screens/ContextScreen';
 import FlatListDemoScreen from '../screens/FlatListDemoScreen';
 import ApiScreen from '../screens/ApiScreen';
+import AsyncAwaitScreen from "../screens/AsyncAwaitScreen";
 //import DetailScreen from '../screens/DetailScreen';
 
 const Stack = createNativeStackNavigator();
@@ -24,6 +25,7 @@ export default function StackNavigator() {
       <Stack.Screen name="Contexto" component={ContextScreen} />
       <Stack.Screen name="Estilos" component={EstilosScreen} />
       <Stack.Screen name="FlatListDemo" component={FlatListDemoScreen} />
+      <Stack.Screen name="AsyncAwait" component={AsyncAwaitScreen} />
      {/*  <Stack.Screen name="Details" component={DetailScreen} />*/} 
     </Stack.Navigator>
   );

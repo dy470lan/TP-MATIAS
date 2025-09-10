@@ -9,6 +9,7 @@ export default function HomeScreen({ navigation }) {
     { titulo: 'Explorar Navegacion', ruta: 'Navegación' },
     { titulo: 'Explorar Estilos', ruta: 'Estilos' },
     { titulo: 'Explorar Context API', ruta: 'Contexto' },
+    { titulo: 'Explorar Async/Await', ruta: 'AsyncAwait' },
   ];
 
   return (

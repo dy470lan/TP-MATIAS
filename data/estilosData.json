@@ -1,50 +1,44 @@
 [
   {
+    "id": 1,
+    "nombre": "Colores y fondo",
+    "descripcion": "Podés aplicar colores de texto y fondos a los componentes.",
+    "codigo": "const styles = StyleSheet.create({\n  textoRojo: { color: 'red' },\n  fondoAzul: { backgroundColor: 'lightblue', padding: 10 }\n});",
+    "notas": "Los colores pueden ser hexadecimales, palabras clave o rgba()."
+  },
+  {
+    "id": 2,
+    "nombre": "Tipografía",
+    "descripcion": "Permite cambiar tamaño, peso y estilo del texto.",
+    "codigo": "const styles = StyleSheet.create({\n  titulo: { fontSize: 24, fontWeight: 'bold' },\n  subtitulo: { fontSize: 18, fontStyle: 'italic' }\n});",
+    "notas": "Algunas fuentes personalizadas requieren instalación extra."
+  },
+  {
+    "id": 3,
+    "nombre": "Espaciado (margin y padding)",
+    "descripcion": "Define el espacio interno (padding) y externo (margin) de un componente.",
+    "codigo": "const styles = StyleSheet.create({\n  caja: { margin: 10, padding: 15, backgroundColor: '#eee' }\n});",
+    "notas": "Usar valores consistentes para mantener un diseño limpio."
+  },
+  {
+    "id": 4,
+    "nombre": "Bordes",
+    "descripcion": "Podés dar bordes y redondear esquinas.",
+    "codigo": "const styles = StyleSheet.create({\n  cajaBorde: { borderWidth: 2, borderColor: 'black', borderRadius: 10 }\n});",
+    "notas": "borderRadius define cuánto se redondean las esquinas."
+  },
+  {
     "id": 5,
-    "nombre": "Image",
-    "descripcion": "Muestra una imagen desde una URL o un archivo local.",
-    "codigo": "<Image source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }} style={{ width: 50, height: 50 }} />",
-    "ejemplo": "Ideal para mostrar logotipos, fotos de perfil, banners.",
-    "notas": "Debe indicarse un tamaño fijo (width y height)."
+    "nombre": "Flexbox (alineación)",
+    "descripcion": "React Native usa Flexbox para organizar los elementos en fila o columna.",
+    "codigo": "const styles = StyleSheet.create({\n  fila: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }\n});",
+    "notas": "justifyContent alinea en el eje principal, alignItems en el secundario."
   },
   {
     "id": 6,
-    "nombre": "TouchableOpacity",
-    "descripcion": "Componente táctil que puede usarse como botón.",
-    "codigo": "<TouchableOpacity onPress={() => alert('Presionado')}><Text>¡Tocame!</Text></TouchableOpacity>",
-    "ejemplo": "Útil cuando necesitás un botón personalizado.",
-    "notas": "Permite aplicar estilos personalizados y animaciones de opacidad."
-  },
-  {
-    "id": 7,
-    "nombre": "ScrollView",
-    "descripcion": "Permite desplazar contenido en pantalla.",
-    "codigo": "<ScrollView><Text>Contenido largo...</Text></ScrollView>",
-    "ejemplo": "Ideal para listas, artículos o formularios extensos.",
-    "notas": "Debe envolver todo el contenido desplazable."
-  },
-  {
-    "id": 8,
-    "nombre": "FlatList",
-    "descripcion": "Lista optimizada para mostrar datos grandes.",
-    "codigo": "<FlatList data={datos} renderItem={({ item }) => <Text>{item}</Text>} />",
-    "ejemplo": "Recomendado cuando mostrás muchas filas de datos.",
-    "notas": "Más eficiente que ScrollView para grandes volúmenes de elementos."
-  },
-  {
-    "id": 9,
-    "nombre": "Pressable",
-    "descripcion": "Botón moderno que permite manejar distintos estados táctiles.",
-    "codigo": "<Pressable onPress={() => console.log('Tocado')}><Text>Presionar</Text></Pressable>",
-    "ejemplo": "Ofrece control sobre estilos al presionar, mantener, etc.",
-    "notas": "Similar a TouchableOpacity pero más versátil."
-  },
-  {
-    "id": 10,
-    "nombre": "Modal",
-    "descripcion": "Muestra un contenido encima de la pantalla principal.",
-    "codigo": "<Modal visible={modalVisible}><Text>Esto es un modal</Text></Modal>",
-    "ejemplo": "Útil para formularios, mensajes importantes o confirmaciones.",
-    "notas": "Debe controlarse con un estado (`visible`)."
+    "nombre": "Estilos combinados",
+    "descripcion": "Podés aplicar múltiples estilos a un mismo componente.",
+    "codigo": "<Text style={[styles.textoRojo, styles.textoGrande]}>Combinado</Text>",
+    "notas": "Se combinan en un array, y el último estilo puede sobrescribir propiedades."
   }
 ]

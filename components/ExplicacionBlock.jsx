@@ -1,5 +1,4 @@
 // En ExplicacionBlock.jsx
-import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 export default function ExplicacionBlock({ titulo, descripcion, codigo, ejemplo, notas, renderDemo }) {
