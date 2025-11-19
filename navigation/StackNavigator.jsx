@@ -1,32 +1,16 @@
-// navigation/StackNavigator.jsx
-import React from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from '../screens/HomeScreen';
-import ComponentesScreen from '../screens/ComponentScreen';
-import HooksScreen from '../screens/HookScreen';
-import NavigationScreen from '../screens/NavigationScreen';
-import EstilosScreen from '../screens/EstiloScreen';
-import ContextScreen from '../screens/ContextScreen';
-import FlatListDemoScreen from '../screens/FlatListDemoScreen';
-import ApiScreen from '../screens/ApiScreen';
-import AsyncAwaitScreen from "../screens/AsyncAwaitScreen";
-//import DetailScreen from '../screens/DetailScreen';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import HomeScreen from "../screens/HomeScreen";
+import LibraryScreen from "../screens/LibraryScreen";
+import PlayerScreen from "../screens/PlayerScreen";
 
 const Stack = createNativeStackNavigator();
 
 export default function StackNavigator() {
   return (
-    <Stack.Navigator initialRouteName="Home">
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Componentes" component={ComponentesScreen} />
-      <Stack.Screen name="Hooks" component={HooksScreen} />
-      <Stack.Screen name="API"  component={ApiScreen}  options={{ title: 'APIs del Dispositivo' }}/>
-      <Stack.Screen name="Navegación" component={NavigationScreen} />
-      <Stack.Screen name="Contexto" component={ContextScreen} />
-      <Stack.Screen name="Estilos" component={EstilosScreen} />
-      <Stack.Screen name="FlatListDemo" component={FlatListDemoScreen} />
-      <Stack.Screen name="AsyncAwait" component={AsyncAwaitScreen} />
-     {/*  <Stack.Screen name="Details" component={DetailScreen} />*/} 
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={HomeScreen} options={{ title: "MusicAI" }}/>
+      <Stack.Screen name="Library" component={LibraryScreen} options={{ title: "Mi Biblioteca" }}/>
+      <Stack.Screen name="Player" component={PlayerScreen} options={{ title: "Reproductor" }}/>
     </Stack.Navigator>
   );
 }
